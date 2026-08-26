@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Moto Show - compra, venda, troca e financiamento de motos em Tatui/SP desde 1985. Fale no WhatsApp com Joao ou Fernanda.">
+<meta property="og:title" content="Moto Show - Compra e venda de motos em Tatui">
+<meta property="og:description" content="Desde 1985. Compra, venda, troca e financiamento de motos em Tatui/SP.">
+<meta property="og:image" content="logo.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="logo.jpg">
+<title>Moto Show</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&amp;family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #F4EFE0;
+    --bg-alt: #EAE1C6;
+    --surface: #FFFDF6;
+    --ink: #211C10;
+    --ink-soft: #59503A;
+    --line: #D9CDA6;
+    --sage: #6E8A47;
+    --sage-deep: #3E4E28;
+    --sage-pale: #DCE4C4;
+    --amber: #C97613;
+    --amber-bright: #E8971F;
+    --wa: #1EA855;
+    --wa-dark: #17833F;
+    --wa-glow: rgba(30,168,85,0.55);
+    --shadow: 0 1px 0 rgba(33,28,16,0.06);
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16170F;
+      --bg-alt: #1D1F14;
+      --surface: #21231A;
+      --ink: #F2ECD8;
+      --ink-soft: #C4BB9C;
+      --line: #34351F;
+      --sage: #A2C173;
+      --sage-deep: #C9E39B;
+      --sage-pale: #2B3320;
+      --amber: #F0A030;
+      --amber-bright: #F5B655;
+      --wa: #25C462;
+      --wa-dark: #1DA352;
+      --wa-glow: rgba(37,196,98,0.4);
+      --shadow: 0 1px 0 rgba(0,0,0,0.3);
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #16170F;
+    --bg-alt: #1D1F14;
+    --surface: #21231A;
+    --ink: #F2ECD8;
+    --ink-soft: #C4BB9C;
+    --line: #34351F;
+    --sage: #A2C173;
+    --sage-deep: #C9E39B;
+    --sage-pale: #2B3320;
+    --amber: #F0A030;
+    --amber-bright: #F5B655;
+    --wa: #25C462;
+    --wa-dark: #1DA352;
+    --wa-glow: rgba(37,196,98,0.4);
+    --shadow: 0 1px 0 rgba(0,0,0,0.3);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    background: #F4EFE0;
+    background: var(--bg);
+  }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) { background: #16170F; background: var(--bg); }
+  }
+  html[data-theme="dark"] { background: #16170F; background: var(--bg); }
+
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: #F4EFE0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Work Sans", -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  h1, h2, h3 {
+    font-family: "Oswald", "Arial Narrow", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .tag {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+  }
+
+  a { color: inherit; }
+
+  /* ---------- header ---------- */
+
+  header.site {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .site-head-inner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand-badge {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex: none;
+    border: 2px solid var(--line);
+  }
+  .brand-badge img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .brand-name {
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .brand-name span { color: var(--amber); }
+
+  .site-head-inner .tag {
+    margin-left: auto;
+    color: var(--ink-soft);
+    display: none;
+  }
+  @media (min-width: 560px) {
+    .site-head-inner .tag { display: block; }
+  }
+
+  /* ---------- hero ---------- */
+
+  .hero {
+    position: relative;
+    padding: 66px 0 58px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-color: #2A2416;
+    overflow: hidden;
+  }
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    display: block;
+  }
+  .hero-veil {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(180deg, rgba(12,10,4,0.60) 0%, rgba(12,10,4,0.78) 45%, rgba(12,10,4,0.86) 72%, rgba(12,10,4,0.92) 100%);
+  }
+  .hero .hero-eyebrow { color: #E9C88A; }
+  .hero .hero-eyebrow::before { background: var(--amber-bright); }
+  .hero h1 { color: #FFFFFF; text-shadow: 0 2px 18px rgba(0,0,0,0.5); }
+  .hero h1 em { color: #F6B44A; }
+  .hero p.lede {
+    color: #F6F3EA;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+    background: rgba(10,8,3,0.46);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border-left: 3px solid var(--amber-bright);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+  }
+  @media (max-width: 700px) {
+    .hero p.lede {
+      border-left: 0;
+      border-radius: 6px;
+      text-align: center;
+    }
+  }
+  .hero .hero-stat {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.28);
+    backdrop-filter: blur(3px);
+  }
+  .hero .hero-stat .num, .hero .hero-stat .label { color: #FFFFFF; }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  @media (max-width: 700px) {
+    .hero-tags { justify-content: center; }
+  }
+  .hero-tags span {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1A1508;
+    background: var(--amber-bright);
+    border-radius: 4px;
+    padding: 6px 11px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  @media (max-width: 700px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero-badge-wrap { justify-content: center; }
+  }
+
+  .hero-badge-wrap {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .hero-badge {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 18px 40px -18px rgba(33,28,16,0.35);
+    border: 5px solid rgba(255,255,255,0.92);
+    outline: 1px solid rgba(0,0,0,0.15);
+    transform: rotate(-4deg);
+  }
+  .hero-badge img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .hero-eyebrow {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: var(--sage);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .hero-eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--amber);
+    display: inline-block;
+  }
+  @media (max-width: 700px) {
+    .hero-eyebrow { justify-content: center; }
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 5.2vw, 3.4rem);
+    line-height: 1.03;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--amber);
+  }
+
+  .hero p.lede {
+    margin: 18px 0 0;
+    font-size: 1.08rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  @media (max-width: 700px) {
+    .hero p.lede { max-width: none; margin-left: auto; margin-right: auto; }
+  }
+
+  .hero-stat {
+    margin-top: 26px;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    background: var(--sage-pale);
+    border-radius: 6px;
+    padding: 10px 18px;
+  }
+  .hero-stat .num {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--sage-deep);
+  }
+  .hero-stat .label {
+    font-size: 0.85rem;
+    color: var(--sage-deep);
+    font-weight: 600;
+  }
+
+  /* ---------- quem somos ---------- */
+
+  .about {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 48px 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  @media (min-width: 700px) {
+    .about-grid { grid-template-columns: 1.1fr 1fr; align-items: start; }
+  }
+
+  .about h2 {
+    font-size: 1.7rem;
+    margin-bottom: 14px;
+  }
+
+  .about p {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 58ch;
+  }
+  .about p + p { margin-top: 12px; }
+
+  .plate {
+    font-family: "JetBrains Mono", monospace;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  .plate .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.86rem;
+  }
+  .plate .row:last-child { border-bottom: none; }
+  .plate .row .k { color: var(--ink-soft); }
+  .plate .row .v { font-weight: 700; text-align: right; }
+
+  /* ---------- whatsapp section ---------- */
+
+  .contact {
+    padding: 52px 0 60px;
+  }
+
+  .contact-head {
+    text-align: center;
+    max-width: 46ch;
+    margin: 0 auto 34px;
+  }
+  .contact-head h2 { font-size: 1.7rem; }
+  .contact-head p {
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+    line-height: 1.5;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  @media (min-width: 640px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    box-shadow: var(--shadow);
+  }
+
+  .avatar {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--sage-pale);
+    margin-bottom: 12px;
+    border: 3px solid var(--line);
+    flex: none;
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .contact-card .role {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .contact-card h3 {
+    font-size: 1.4rem;
+    margin-top: 2px;
+  }
+
+  .contact-card .job {
+    margin: 4px 0 0;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .wa-btn {
+    margin-top: 18px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--wa);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 1.12rem;
+    padding: 18px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--wa);
+    box-shadow: 0 6px 16px -8px var(--wa-glow);
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .wa-btn:hover { background: var(--wa-dark); border-color: var(--wa-dark); }
+  .wa-btn:active { transform: scale(0.98); }
+  .wa-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .wa-btn svg { width: 22px; height: 22px; flex: none; }
+
+  .wa-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- visit / mapa ---------- */
+
+  .visit {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 48px 0;
+  }
+
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  @media (min-width: 700px) {
+    .visit-grid { grid-template-columns: 0.9fr 1.1fr; align-items: center; }
+  }
+
+  .visit h2 { font-size: 1.7rem; margin-bottom: 14px; }
+
+  .visit-addr {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+
+  .visit-hours {
+    font-family: "JetBrains Mono", monospace;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: var(--shadow);
+    max-width: 340px;
+  }
+  .visit-hours .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.85rem;
+  }
+  .visit-hours .row:last-child { border-bottom: none; }
+  .visit-hours .k { color: var(--ink-soft); }
+  .visit-hours .v { font-weight: 700; }
+
+  .visit-link {
+    display: inline-block;
+    margin-top: 18px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 0.95rem;
+    color: var(--sage-deep);
+    text-decoration: none;
+    border-bottom: 2px solid var(--amber);
+    padding-bottom: 2px;
+  }
+  .visit-link:hover { color: var(--amber); }
+
+  .visit-map {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    background:
+      radial-gradient(circle at 22% 28%, var(--sage-pale) 0%, transparent 42%),
+      var(--sage-deep);
+  }
+  .visit-map svg { width: 100%; height: 100%; display: block; }
+  .visit-map .map-cta {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 0.82rem;
+    color: var(--sage-deep);
+    background: var(--surface);
+    border-radius: 999px;
+    padding: 8px 16px;
+    box-shadow: 0 6px 16px -8px rgba(0,0,0,0.4);
+    white-space: nowrap;
+  }
+  .visit-map:hover .map-cta { background: var(--amber-bright); color: var(--ink); }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 26px 0 40px;
+    text-align: center;
+  }
+  footer .brand-name { justify-content: center; display: inline-flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  footer .brand-badge { width: 30px; height: 30px; }
+  footer p {
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    margin: 4px 0 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wa-btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+
+<header class="site">
+  <div class="wrap site-head-inner">
+    <div class="brand-badge"><img src="logo.jpg" alt="Logo Moto Show"></div>
+    <div class="brand-name">Moto <span>Show</span></div>
+    <div class="tag">Desde 1985</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"><img src="fachada.jpg" alt="Fachada da Moto Show em Tatu&#237;"></div>
+  <div class="hero-veil"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-badge-wrap">
+      <div class="hero-badge"><img src="logo.jpg" alt="Logo Moto Show"></div>
+    </div>
+    <div>
+      <div class="hero-eyebrow">Compra e venda de motos &middot; Tatu&#237;</div>
+      <h1>Quem entende de moto<br>compra na <em>Moto Show</em></h1>
+      <p class="lede">Compra e venda de motos em Tatu&#237;. H&#225; mais de quatro d&#233;cadas ajudando o pessoal da cidade a comprar, vender e trocar sem enrola&#231;&#227;o.</p>
+      <div class="hero-tags">
+        <span>Compra</span><span>Venda</span><span>Troca</span><span>Financia</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">41</span>
+        <span class="label">anos<br>no mercado</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2>Nossa hist&#243;ria</h2>
+      <p>A Moto Show come&#231;ou em 1985, pelas m&#227;os do Jo&#227;o, que at&#233; hoje &#233; quem toca o neg&#243;cio no dia a dia. Mais de quatro d&#233;cadas depois, virou refer&#234;ncia em Tatu&#237; na compra e venda de motos &#8212; sempre com aquele papo direto, de quem realmente entende do assunto.</p>
+      <p>Compra, venda, troca e financiamento de motos. Quer vender a sua? Fala com o Jo&#227;o. Quer comprar? A Fernanda te atende.</p>
+    </div>
+    <div class="plate">
+      <div class="row"><span class="k">Funda&#231;&#227;o</span><span class="v">1985</span></div>
+      <div class="row"><span class="k">Cidade</span><span class="v">Tatu&#237; &mdash; SP</span></div>
+      <div class="row"><span class="k">Ramo</span><span class="v">Compra, venda,<br>troca e financia</span></div>
+      <div class="row"><span class="k">Tempo de estrada</span><span class="v">41 anos</span></div>
+      <div class="row"><span class="k">Propriet&#225;rio</span><span class="v">Jo&#227;o</span></div>
+      <div class="row"><span class="k">Atendimento</span><span class="v">Fernanda</span></div>
+      <div class="row"><span class="k">Seg. a sex.</span><span class="v">8h &agrave;s 18h</span></div>
+      <div class="row"><span class="k">S&#225;bado</span><span class="v">8h &#224;s 12h</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-head">
+      <h2>Fala com a gente</h2>
+      <p>Cada um cuida de uma ponta do neg&#243;cio. Escolhe abaixo o que voc&#234; precisa e chama no WhatsApp.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="avatar"><img src="logo.jpg" alt="Moto Show"></div>
+        <div class="role">Quer vender sua moto?</div>
+        <h3>Jo&#227;o</h3>
+        <p class="job">Compra de motos</p>
+        <a class="wa-btn" href="https://wa.me/5515996753919" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36c1.46.8 3.1 1.22 4.84 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.55 2 12.04 2zm0 18.2c-1.52 0-3-.4-4.3-1.17l-.31-.18-3.09.81.82-3-.2-.31a8.15 8.15 0 0 1-1.26-4.39c0-4.51 3.67-8.18 8.19-8.18 4.51 0 8.18 3.67 8.18 8.18 0 4.52-3.67 8.24-8.19 8.24zm4.48-6.13c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.9 2.42 1.02 2.58c.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.46-.6 1.67-1.17.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+          Vender minha moto
+        </a>
+        <div class="wa-note">Abre o WhatsApp direto</div>
+      </div>
+      <div class="contact-card">
+        <div class="avatar"><img src="logo.jpg" alt="Moto Show"></div>
+        <div class="role">Quer comprar uma moto?</div>
+        <h3>Fernanda</h3>
+        <p class="job">Venda de motos</p>
+        <a class="wa-btn" href="https://wa.me/5515996366457" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36c1.46.8 3.1 1.22 4.84 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.55 2 12.04 2zm0 18.2c-1.52 0-3-.4-4.3-1.17l-.31-.18-3.09.81.82-3-.2-.31a8.15 8.15 0 0 1-1.26-4.39c0-4.51 3.67-8.18 8.19-8.18 4.51 0 8.18 3.67 8.18 8.18 0 4.52-3.67 8.24-8.19 8.24zm4.48-6.13c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.9 2.42 1.02 2.58c.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.46-.6 1.67-1.17.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+          Quero comprar
+        </a>
+        <div class="wa-note">Abre o WhatsApp direto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <h2>Onde estamos</h2>
+      <p class="visit-addr">Tv. Benedito Grazia, 157<br>Jardim Santa Cruz &mdash; Tatu&#237;/SP<br>18276-030</p>
+      <div class="visit-hours">
+        <div class="row"><span class="k">Segunda a sexta</span><span class="v">8h &#224;s 18h</span></div>
+        <div class="row"><span class="k">S&#225;bado</span><span class="v">8h &#224;s 12h</span></div>
+        <div class="row"><span class="k">Domingo</span><span class="v">Fechado</span></div>
+      </div>
+      <a class="visit-link" href="https://www.google.com/maps/search/?api=1&amp;query=Moto+Show+Tv.+Benedito+Grazia+157+Jardim+Santa+Cruz+Tatu%C3%AD+SP+18276-030" target="_blank" rel="noopener">Abrir no Google Maps &rarr;</a>
+    </div>
+    <a class="visit-map" href="https://www.google.com/maps/search/?api=1&amp;query=Moto+Show+Tv.+Benedito+Grazia+157+Jardim+Santa+Cruz+Tatu%C3%AD+SP+18276-030" target="_blank" rel="noopener" aria-label="Abrir localiza&#231;&#227;o da Moto Show no Google Maps">
+      <svg viewBox="0 0 300 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="300" height="225" fill="var(--sage-deep)"/>
+        <g fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="2">
+          <path d="M0 40 H300 M0 95 H300 M0 150 H300 M0 205 H300"/>
+          <path d="M55 0 V225 M120 0 V225 M185 0 V225 M250 0 V225"/>
+        </g>
+        <path d="M0 150 C 60 120, 90 170, 150 140 S 260 90, 300 100" stroke="rgba(255,255,255,0.35)" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <circle cx="150" cy="112" r="7" fill="var(--amber-bright)"/>
+        <path d="M150 82 c -18 0 -32 14 -32 32 c 0 22 32 52 32 52 s 32 -30 32 -52 c 0 -18 -14 -32 -32 -32z" fill="var(--amber-bright)" stroke="var(--sage-deep)" stroke-width="3"/>
+        <circle cx="150" cy="114" r="11" fill="var(--sage-deep)"/>
+      </svg>
+      <span class="map-cta">Ver rota no Google Maps</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand-name"><div class="brand-badge"><img src="logo.jpg" alt="Logo Moto Show"></div>Moto <span>Show</span></div>
+    <p>Compra e venda de motos &middot; Tatu&#237; &mdash; SP &middot; desde 1985</p>
+  </div>
+</footer>
+
+</body>
+</html>
