@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://motoshowtatui.com.br/sitemap.xml
