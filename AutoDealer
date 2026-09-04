@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://motoshowtatui.com.br/">
 <meta property="og:locale" content="pt_BR">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"AutoDealer","name":"Moto Show","description":"Compra, venda, troca e financiamento de motos em Tatuí/SP.","url":"https://motoshowtatui.com.br/","image":"https://motoshowtatui.com.br/fachada.jpg","telephone":"+5515996366457","address":{"@type":"PostalAddress","streetAddress":"R. Santa Cruz, 159","addressLocality":"Tatuí","addressRegion":"SP","postalCode":"18275-750","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"brand":["Honda","Yamaha","Suzuki"],"areaServed":"Tatuí - SP"}
+{"@context":"https://schema.org","@type":"MotorcycleDealer","name":"Moto Show","description":"Compra, venda, troca e financiamento de motos em Tatuí/SP.","url":"https://motoshowtatui.com.br/","image":"https://motoshowtatui.com.br/fachada.jpg","telephone":"+5515996366457","address":{"@type":"PostalAddress","streetAddress":"R. Santa Cruz, 159","addressLocality":"Tatuí","addressRegion":"SP","postalCode":"18275-750","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"brand":["Honda","Yamaha","Suzuki"],"areaServed":"Tatuí - SP"}
 </script>
 <style>
   /* ================= TOKENS ================= */
